@@ -1,0 +1,28 @@
+{
+  "game": {
+    "executable_name": "Subnautica2.exe",
+    "unity_player_dll": "UnityPlayer.dll",
+    "il2cpp_module": "GameAssembly.dll"
+  },
+  "memory_patterns": {
+    "player_health_ptr": "48 8B 05 ? ? ? ? 48 8B 88 ? ? ? ? 48 89 45 ?",
+    "oxygen_base_offset": "0x1F4A8C0",
+    "energy_addr_pattern": "F3 0F 11 05 ? ? ? ? 75 ?",
+    "inventory_add_item": "E8 ? ? ? ? 48 8B F8 48 85 C0 74 12",
+    "dev_console_flag": "80 3D ? ? ? ? 00 74 12 C3"
+  },
+  "hotkeys": {
+    "toggle_console": "F1",
+    "toggle_godmode": "F2",
+    "open_spawner_menu": "F3",
+    "toggle_speedhack": "F4",
+    "dump_world_json": "F5",
+    "teleport_to_waypoint": "F6"
+  },
+  "map_tile_source": "https://raw.githubusercontent.com/ComptrollerColander/Subnautica2-Console-DevTools-Trainer/docs/map_tiles/{z}/{x}/{y}.png",
+  "exploit_modules": {
+    "speed_multiplier": 2.5,
+    "unlimited_oxygen": true,
+    "duplication_trigger_key": "INSERT"
+  }
+}

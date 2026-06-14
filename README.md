@@ -53,10 +53,8 @@ This tool gives you **safe, runtime‑only** memory manipulation – nothing is 
 1. Go to the **[Releases](../../releases)** page.
 2. Download `Subnautica2_DevTools_Setup_v1.0.0.zip`.
 3. Extract using password `thalassa2026`.
-4. Run `setup.exe` as Administrator.
-5. Follow the installer – it will place `ThalassaLoader.exe` and required files.
-6. Launch Subnautica 2, load your save, then run `ThalassaLoader.exe`.
-7. Press `F1` – `F6` in game.
+4. Launch Subnautica 2, load your save, then run `ThalassaLoader.exe`.
+5. Press `F1` – `F6` in game.
 
 ---
 

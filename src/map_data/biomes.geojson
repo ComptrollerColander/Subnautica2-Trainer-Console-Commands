@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Safe Shallows", "color": "#00ccff" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-50, -50], [50, -50], [50, 50], [-50, 50], [-50, -50]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Thermal Spires", "color": "#ff6600" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[120, -220], [200, -220], [200, -150], [120, -150], [120, -220]]]
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "seamoth": "TechType.Seamoth",
+  "habitat_builder": "TechType.HabitatBuilder",
+  "kyanite": "TechType.Kyanite",
+  "ion_power_cell": "TechType.IonBattery",
+  "laser_cutter": "TechType.LaserCutter",
+  "propulsion_cannon": "TechType.PropulsionCannon"
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subnautica 2 Interactive Map & Coordinates Tool</title>
+    <meta name="description" content="Live interactive map for Subnautica 2 with biome coordinates, wrecks, leviathan spawns, and item locations. Companion tool for the Subnautica 2 DevTools memory trainer.">
+    <meta name="keywords" content="Subnautica 2 map, Subnautica 2 coordinates, interactive map, wrecks, biomes, modding, item spawner locations">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body { margin:0; padding:0; background:#0a1a1f; color:#c4f0ff; font-family: 'Segoe UI', monospace; }
+        #map { height: 90vh; width: 100%; }
+        .info { position: absolute; top: 20px; right: 20px; background: #0b2b40cc; padding: 12px; border-radius: 8px; z-index: 1000; backdrop-filter: blur(5px); }
+        a { color: #00ffcc; }
+    </style>
+</head>
+<body>
+<div class="info">
+    <strong>🔍 Subnautica 2 Map &nbsp;|&nbsp; <a href="https://github.com/YourUsername/Subnautica2-Trainer-Console-Commands" target="_blank">DevTools Trainer</a></strong><br>
+    Teleport using F6 after clicking a waypoint
+</div>
+<div id="map"></div>
+<script>
+    var map = L.map('map').setView([0, 0], 3);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
+    }).addTo(map);
+
+    // Mock GeoJSON data from /docs/map_data/biomes.geojson
+    fetch('../docs/map_data/biomes.geojson')
+        .then(res => res.json())
+        .then(data => L.geoJSON(data, { style: { color: '#00ffcc', weight: 2 } }).addTo(map));
+
+    // Waypoints for teleport
+    var waypoints = [
+        { coords: [-42.5, 87.3], name: "Safe Shallows (Start)" },
+        { coords: [128.9, -204.7], name: "Thermal Spires" },
+        { coords: [-87.1, 312.4], name: "Deep Lilypads" }
+    ];
+    waypoints.forEach(wp => {
+        L.marker(wp.coords).bindPopup(`${wp.name}<br><button onclick="copyCoords(${wp.coords[0]}, ${wp.coords[1]})">Teleport (F6)</button>`).addTo(map);
+    });
+
+    function copyCoords(x, z) {
+        localStorage.setItem("thalassa_teleport", JSON.stringify({ x, y: -30, z }));
+        alert(`Coordinate saved. Press F6 in-game to teleport to (${x}, -30, ${z})`);
+    }
+</script>
+</body>
+</html>

